@@ -274,3 +274,4 @@ export default function MemoryCardsPage() {
     </div>
   );
 }
+//bruh this is so annoying
