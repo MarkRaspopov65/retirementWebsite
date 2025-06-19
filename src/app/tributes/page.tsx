@@ -24,7 +24,7 @@ const teachers2025: Person[] = [
     role: 'Teacher',
     year: 2025,
     message: 'Placeholder',
-    image: '/tributes/ho.jpg',
+    image: '/tributes/beckwith.jpg',
   },
 
   {
@@ -32,7 +32,7 @@ const teachers2025: Person[] = [
     role: 'Teacher',
     year: 2025,
     message: 'Placeholder',
-    image: '/tributes/barazesh.jpg',
+    image: '/tributes/beckwith.jpg',
   },
 
   {
@@ -40,61 +40,20 @@ const teachers2025: Person[] = [
     role: 'Teacher',
     year: 2025,
     message: 'Placeholder',
-    image: '/tributes/teh.jpg',
+    image: '/tributes/beckwith.jpg',
   },
   // add more teachers here
 ];
 
 const students2025: Person[] = [
   {
-    name: 'Andrew Tsai',
+    name: 'placeholder',
     role: 'Student',
     year: 2025,
     message: 'placeholder',
-    image: '/tributes/student1.jpg',
+    image: '/tributes/beckwith.jpg',
   },
-  {
-    name: 'Selena Miao',
-    role: 'Student',
-    year: 2025,
-    message: 'placeholder',
-    image: '/tributes/student1.jpg',
-  },
-  {
-    name: 'Olivia Ye',
-    role: 'Student',
-    year: 2025,
-    message: 'placeholder',
-    image: '/tributes/student1.jpg',
-  },
-  {
-    name: 'Ethan Javier Wong',
-    role: 'Student',
-    year: 2025,
-    message: 'placeholder',
-    image: '/tributes/student1.jpg',
-  },
-  {
-    name: 'Vienna Liu',
-    role: 'Student',
-    year: 2025,
-    message: 'placeholder',
-    image: '/tributes/student1.jpg',
-  },
-  {
-    name: 'Andrew Tsai',
-    role: 'Student',
-    year: 2025,
-    message: 'placeholder',
-    image: '/tributes/student1.jpg',
-  },
-  {
-    name: 'Andrew Tsai',
-    role: 'Student',
-    year: 2025,
-    message: 'placeholder',
-    image: '/tributes/student1.jpg',
-  },
+  
   // add more students here
 ];
 
