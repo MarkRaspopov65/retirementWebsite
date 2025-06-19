@@ -76,7 +76,7 @@ export default function MemoryCardsPage() {
   // Smaller grid: 3 columns (6 pairs total = 12 cards)
   const gridColumns = 3;
 
-  // Button styles and hover handlers (copied from your Wordle example)
+  // Button styles and hover handlers
   const smallButtonStyle: React.CSSProperties = {
     padding: '6px 12px',
     fontSize: '1rem',
@@ -171,7 +171,7 @@ export default function MemoryCardsPage() {
             <ul>
               <li>Click two cards to flip them over.</li>
               <li>If the cards match, they remain visible.</li>
-              <li>If they don't match, they flip back over.</li>
+              <li>If they don&apos;t match, they flip back over.</li>
               <li>Try to match all pairs with as few guesses as possible!</li>
             </ul>
             <p>Click anywhere to close.</p>
@@ -179,7 +179,7 @@ export default function MemoryCardsPage() {
         </div>
       )}
 
-      <p style={{ fontWeight: '600', fontSize: '1.2rem', marginBottom: 20 }}>
+      <p style={{ fontWeight: 600, fontSize: '1.2rem', marginBottom: 20 }}>
         Number of guesses: <span style={{ color: '#fff' }}>{guessCount}</span>
       </p>
 
