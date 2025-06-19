@@ -88,7 +88,7 @@ export default function MusicWordlePage() {
     }
   };
 
-  function getLetterStatus(letter: string, index: number, guess: string) {
+  function getLetterStatus(letter: string, index: number) {
     if (!wordOfTheDay) return 'absent';
     if (wordOfTheDay[index] === letter) return 'correct';
     if (wordOfTheDay.includes(letter)) return 'present';
@@ -213,7 +213,7 @@ export default function MusicWordlePage() {
           const guess = guesses[rowIndex] || '';
           return [...Array(WORD_LENGTH)].map((_, colIndex) => {
             const letter = guess[colIndex] || '';
-            const status = rowIndex < guesses.length ? getLetterStatus(letter, colIndex, guess) : '';
+            const status = rowIndex < guesses.length ? getLetterStatus(letter, colIndex) : '';
             let bgColor = '#333';
             if (status === 'correct') bgColor = '#6aaa64';
             else if (status === 'present') bgColor = '#c9b458';
