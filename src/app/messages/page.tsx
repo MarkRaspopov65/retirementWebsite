@@ -1,0 +1,156 @@
+'use client';
+import { useEffect, useState } from 'react';
+import { supabase } from '@/lib/supabaseClient';
+
+export default function MessagesPage() {
+  const [messages, setMessages] = useState<{ id: number; content: string }[]>([]);
+  const [newMessage, setNewMessage] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
+    fetchMessages();
+  }, []);
+
+  async function fetchMessages() {
+    const { data, error } = await supabase
+      .from('messages')
+      .select('id, content')
+      .order('inserted_at', { ascending: false });
+    if (!error && data) setMessages(data);
+  }
+
+  async function addMessage() {
+    if (!newMessage.trim()) return;
+    const { error } = await supabase
+      .from('messages')
+      .insert({ content: newMessage.trim() });
+    if (!error) {
+      setNewMessage('');
+      fetchMessages();
+    }
+  }
+
+  async function deleteMessage(id: number) {
+    await supabase.from('messages').delete().eq('id', id);
+    fetchMessages();
+  }
+
+  return (
+    <div style={{
+      minHeight: '100vh',
+      padding: 40,
+      background: 'radial-gradient(circle at center, #222 0%, #000 80%)',
+      color: '#ffd700',
+      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+      textAlign: 'center',
+    }}>
+      <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: 30 }}>
+        Messages
+      </h1>
+
+      {isAdmin && (
+        <div style={{ marginBottom: 30 }}>
+          <input
+            type="text"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+            placeholder="Enter a message"
+            style={{
+              padding: '10px',
+              fontSize: '1.1rem',
+              borderRadius: 6,
+              border: '2px solid #ffd700',
+              backgroundColor: 'black',
+              color: '#ffd700',
+              width: 300,
+              marginRight: 10,
+            }}
+          />
+          <button
+            onClick={addMessage}
+            style={{
+              padding: '10px 16px',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              backgroundColor: 'black',
+              color: '#ffd700',
+              border: '2px solid #ffd700',
+              borderRadius: 6,
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease, color 0.3s ease',
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = '#ffd700';
+              e.currentTarget.style.color = 'black';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = 'black';
+              e.currentTarget.style.color = '#ffd700';
+            }}
+          >
+            Add
+          </button>
+        </div>
+      )}
+
+      <div style={{
+        maxWidth: 700,
+        margin: '0 auto',
+        padding: '30px',
+        backgroundColor: '#111',
+        borderRadius: 12,
+        border: '2px solid #ffd700',
+        boxShadow: '0 0 20px rgba(255, 215, 0, 0.4)',
+      }}>
+        <h2 style={{
+          fontSize: '2rem',
+          fontWeight: 'bold',
+          marginBottom: 20,
+          borderBottom: '2px solid #ffd700',
+          paddingBottom: 10,
+        }}>
+          Advice from Wriggs
+        </h2>
+
+        {messages.length === 0 ? (
+          <p style={{ fontStyle: 'italic' }}>No messages yet.</p>
+        ) : (
+          messages.map(({ id, content }) => (
+            <div
+              key={id}
+              style={{
+                backgroundColor: '#222',
+                padding: '14px 20px',
+                borderRadius: 8,
+                marginBottom: 12,
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                border: '1px solid #ffd700',
+              }}
+            >
+              <span style={{ textAlign: 'left' }}>{content}</span>
+              {isAdmin && (
+                <button
+                  onClick={() => deleteMessage(id)}
+                  style={{
+                    marginLeft: 20,
+                    backgroundColor: '#ff4d4d',
+                    border: 'none',
+                    color: 'white',
+                    padding: '6px 10px',
+                    borderRadius: 6,
+                    cursor: 'pointer',
+                  }}
+                >
+                  Delete
+                </button>
+              )}
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+}
