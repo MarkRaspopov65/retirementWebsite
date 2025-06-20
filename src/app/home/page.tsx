@@ -86,7 +86,7 @@ export default function HomePage() {
             textShadow: 'none',
           }}
         >
-          Celebrating a Lifetime of Music Teaching
+          Celebrating a Lifetime of Teaching Music
         </h1>
 
         <section
@@ -104,7 +104,7 @@ export default function HomePage() {
         >
           <p>
             Hi Mr. Wriggs! I hope this website provides you with entertainment during your years
-            of retirement, and reminds you of your years at UHS.
+            of retirement, and reminds you of your time at UHS.
           </p>
         </section>
       </main>
