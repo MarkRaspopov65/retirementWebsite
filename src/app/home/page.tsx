@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 
 export default function HomePage() {
   const router = useRouter();
-
   const [images, setImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -83,7 +82,6 @@ export default function HomePage() {
             fontWeight: '400',
             marginBottom: 40,
             color: '#ffd700',
-            textShadow: 'none',
           }}
         >
           Celebrating a Lifetime of Teaching Music
@@ -103,8 +101,8 @@ export default function HomePage() {
           }}
         >
           <p>
-            Hi Mr. Wriggs! I hope this website provides you with entertainment during your years
-            of retirement, and reminds you of your time at UHS.
+            Hi Mr. Wriggs! I hope this website provides you with entertainment during your years of
+            retirement, and reminds you of your time at UHS.
           </p>
         </section>
       </main>
@@ -141,25 +139,23 @@ export default function HomePage() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: 40,
+            gap: 16,
             flexWrap: 'nowrap',
-            position: 'relative',
+            overflow: 'hidden',
           }}
         >
           <button
             onClick={previousSlide}
             style={{
-              fontSize: '3rem',
+              fontSize: '2rem',
               background: 'none',
               border: 'none',
               color: '#ffd700',
               cursor: 'pointer',
-              zIndex: 2,
-              position: 'relative',
               userSelect: 'none',
+              zIndex: 2,
             }}
-            role="button"
-            aria-label="Previous image"
+            aria-label="Previous"
           >
             ←
           </button>
@@ -167,9 +163,12 @@ export default function HomePage() {
           <div
             style={{
               position: 'relative',
-              width: 300,
-              height: 200,
+              width: 250,
+              height: 160,
               flexShrink: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <img
@@ -177,49 +176,70 @@ export default function HomePage() {
               alt="Previous"
               style={{
                 position: 'absolute',
-                left: '-160px',
+                left: '-130px',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                width: '150px',
-                height: '100px',
+                width: '110px',
+                height: '72px',
                 objectFit: 'cover',
                 opacity: 0.3,
                 borderRadius: 8,
                 pointerEvents: 'none',
                 userSelect: 'none',
+                boxShadow: '0 0 8px rgba(255, 215, 0, 0.2)',
               }}
+              loading="lazy"
               draggable={false}
             />
-            <img
-              src={`/gallery/${images[currentIndex]}`}
-              alt="Current"
+
+            <div
               style={{
-                width: '300px',
-                height: '200px',
-                objectFit: 'cover',
-                borderRadius: 12,
                 border: '3px solid #ffd700',
-                boxShadow: '0 0 30px rgba(255, 215, 0, 0.7)',
-                userSelect: 'none',
+                borderRadius: 12,
+                boxShadow: '0 0 24px rgba(255, 215, 0, 0.7)',
+                padding: 4,
+                backgroundColor: 'black',
+                width: 250,
+                height: 160,
+                boxSizing: 'border-box',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
-              draggable={false}
-            />
+            >
+              <img
+                src={`/gallery/${images[currentIndex]}`}
+                alt="Current"
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: 8,
+                  display: 'block',
+                }}
+                draggable={false}
+              />
+            </div>
+
             <img
               src={`/gallery/${images[(currentIndex + 1) % images.length]}`}
               alt="Next"
               style={{
                 position: 'absolute',
-                right: '-160px',
+                right: '-130px',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                width: '150px',
-                height: '100px',
+                width: '110px',
+                height: '72px',
                 objectFit: 'cover',
                 opacity: 0.3,
                 borderRadius: 8,
                 pointerEvents: 'none',
                 userSelect: 'none',
+                boxShadow: '0 0 8px rgba(255, 215, 0, 0.2)',
               }}
+              loading="lazy"
               draggable={false}
             />
           </div>
@@ -227,22 +247,41 @@ export default function HomePage() {
           <button
             onClick={nextSlide}
             style={{
-              fontSize: '3rem',
+              fontSize: '2rem',
               background: 'none',
               border: 'none',
               color: '#ffd700',
               cursor: 'pointer',
-              zIndex: 2,
-              position: 'relative',
               userSelect: 'none',
+              zIndex: 2,
             }}
-            role="button"
-            aria-label="Next image"
+            aria-label="Next"
           >
             →
           </button>
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 600px) {
+          h1 {
+            font-size: 2.4rem !important;
+          }
+          h2 {
+            font-size: 1.6rem !important;
+          }
+          div[style*="width: 250px"] {
+            width: 200px !important;
+            height: 130px !important;
+          }
+          img[alt="Previous"], img[alt="Next"] {
+            display: none !important;
+          }
+          button {
+            font-size: 1.6rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
