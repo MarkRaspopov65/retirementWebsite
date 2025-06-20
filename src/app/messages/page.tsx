@@ -22,9 +22,7 @@ export default function MessagesPage() {
 
   async function addMessage() {
     if (!newMessage.trim()) return;
-    const { error } = await supabase
-      .from('messages')
-      .insert({ content: newMessage.trim() });
+    const { error } = await supabase.from('messages').insert({ content: newMessage.trim() });
     if (!error) {
       setNewMessage('');
       fetchMessages();
@@ -40,19 +38,34 @@ export default function MessagesPage() {
     <div
       style={{
         minHeight: '100vh',
-        padding: 40,
+        padding: 20,
         background: 'radial-gradient(circle at center, #222 0%, #000 80%)',
         color: '#ffd700',
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
         textAlign: 'center',
       }}
     >
-      <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: 30 }}>
+      <h1
+        style={{
+          fontSize: '3rem',
+          fontWeight: 'bold',
+          marginBottom: 30,
+          wordWrap: 'break-word',
+        }}
+      >
         Messages
       </h1>
 
       {isAdmin && (
-        <div style={{ marginBottom: 30 }}>
+        <div
+          style={{
+            marginBottom: 30,
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 10,
+          }}
+        >
           <input
             type="text"
             value={newMessage}
@@ -65,8 +78,8 @@ export default function MessagesPage() {
               border: '2px solid #ffd700',
               backgroundColor: 'black',
               color: '#ffd700',
-              width: 300,
-              marginRight: 10,
+              width: 'min(90vw, 300px)',
+              flexGrow: 1,
             }}
           />
           <button
@@ -99,6 +112,8 @@ export default function MessagesPage() {
       <div
         style={{
           display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
           maxWidth: 1000,
           margin: '0 auto',
           backgroundColor: '#111',
@@ -111,8 +126,8 @@ export default function MessagesPage() {
         {/* Left: Portrait Image */}
         <div
           style={{
-            minWidth: 220,
-            maxWidth: 220,
+            flexBasis: '220px',
+            flexShrink: 0,
             backgroundColor: '#000',
             borderRight: '2px solid #ffd700',
             display: 'flex',
@@ -141,6 +156,8 @@ export default function MessagesPage() {
             padding: '30px 20px',
             maxHeight: '600px',
             overflowY: 'auto',
+            boxSizing: 'border-box',
+            minWidth: 0,
           }}
         >
           <h2
@@ -150,6 +167,7 @@ export default function MessagesPage() {
               marginBottom: 20,
               borderBottom: '2px solid #ffd700',
               paddingBottom: 10,
+              wordBreak: 'break-word',
             }}
           >
             Advice from Wriggs
@@ -170,14 +188,23 @@ export default function MessagesPage() {
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   border: '1px solid #ffd700',
+                  flexWrap: 'wrap',
+                  gap: 10,
                 }}
               >
-                <span style={{ textAlign: 'left' }}>{content}</span>
+                <span
+                  style={{
+                    textAlign: 'left',
+                    flexGrow: 1,
+                    wordBreak: 'break-word',
+                  }}
+                >
+                  {content}
+                </span>
                 {isAdmin && (
                   <button
                     onClick={() => deleteMessage(id)}
                     style={{
-                      marginLeft: 20,
                       backgroundColor: '#ff4d4d',
                       border: 'none',
                       color: 'white',
@@ -185,6 +212,7 @@ export default function MessagesPage() {
                       borderRadius: 6,
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
+                      flexShrink: 0,
                     }}
                     onMouseOver={(e) => {
                       e.currentTarget.style.backgroundColor = '#ff6666';
