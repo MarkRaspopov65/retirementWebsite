@@ -31,8 +31,8 @@ const teachers2025: Person[] = [
     name: 'Niloufar Barazesh',
     role: 'Teacher',
     year: 2025,
-    message: 'Placeholder',
-    image: '/tributes/beckwith.jpg',
+    message: 'Thank you for all the amazing memories Jeff! I will never forget our time co-teaching band classes—and all the wisdom you passed down along the way. One of my favourites: “This profession is a marathon, not a race.” (Still trying to pace myself!) You also constantly reminded me to keep breathing and to get enough sleep… which I definitely try to do—emphasis on try. Your advice has stuck with me, even if my sleep schedule hasn’t. Wishing you the most incredible, fulfilling, relaxing, and sleep-filled retirement—you’ve more than earned it! I will miss you dearly, my dear friend and mentor!',
+    image: '/tributes/barazesh.jpeg',
   },
 
   {
