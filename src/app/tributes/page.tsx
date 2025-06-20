@@ -39,8 +39,8 @@ const teachers2025: Person[] = [
     name: 'Michelle Teh',
     role: 'Teacher',
     year: 2025,
-    message: 'Placeholder',
-    image: '/tributes/beckwith.jpg',
+    message: 'Fun times!',
+    image: '/tributes/teh.jpg',
   },
   // add more teachers here
 ];
