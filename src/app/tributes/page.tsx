@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 
 type Person = {
@@ -49,10 +49,10 @@ const teachers2025: Person[] = [
 
 const alumni2025: Person[] = [
   {
-    name: 'Jane Doe',
+    name: 'Placeholder',
     role: 'Alumni',
     year: 2025,
-    message: 'Congratulations on your retirement! You made such a difference in our lives.',
+    message: 'Placeholder',
     image: '/tributes/beckwith.jpg',
   },
   // add more alumni here
@@ -298,8 +298,6 @@ function groupByDisciplineYear(people: Person[]) {
 }
 
 export default function TributesPage() {
-  // Assume teachers and alumni have no discipline/year so we show them separately
-  const teacherAlumni = [...teachers2025, ...alumni2025];
   const studentsByGroup = groupByDisciplineYear(students2025);
 
   return (
@@ -377,7 +375,7 @@ export default function TributesPage() {
                     marginBottom: 12,
                   }}
                 >
-                  {discipline} (Graduating Class of '{year.toString().slice(2)})
+                  {discipline} (Graduating Class of ’{year.toString().slice(2)})
                 </summary>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                   {people.map(({ name, message, image }, index) => (
