@@ -310,6 +310,15 @@ const students2025: Person[] = [
     discipline: 'Winds',
   },
   {
+    name: 'Calvin Liu',
+    role: 'Student',
+    year: 2025,
+    message: `It's been a crazy few years, especially with you as my teacher. You've molded me as a person, and seeing you every day putting your all in inspires me to do what I do. I hope to see you again sometime in the future!`,
+    image: '/tributes/calvin.jpg',
+    graduatingYear: 2026,
+    discipline: 'Winds',
+  },
+  {
     name: 'Olson Liu',
     role: 'Student',
     year: 2025,
