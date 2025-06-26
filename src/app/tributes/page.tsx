@@ -110,6 +110,13 @@ const alumni2025: Person[] = [
     image: '/tributes/jane.jpg',
   },
   {
+    name: 'Shanthi Veerappan (AU Voice 2024)',
+    role: 'Alumni',
+    year: 2025,
+    message: `Dear Wriggs,\nWords cannot begin to express how much you’ve given me. I think I speak on behalf of all Arts Unionville Music students when I say you’ve given us everything from dad jokes and a safe environment at school to some of the most powerful knowledge we can ever receive. You’re a fantastic teacher, comedian, colleague, and role model; as well as the heart and soul of this beautiful program. Without you, I don’t know where I’d be today and I’m so grateful for the many opportunities you’ve given me. I hope you always remember that you’ve changed a countless amount of lives and brought out the best in all of your students. Enjoy your well deserved rest and I sincerely hope we can keep in touch.`,
+    image: '/tributes/Shanthi.jpg',
+  },
+  {
     name: 'Andrew Poon (AU Winds 2024)',
     role: 'Alumni',
     year: 2025,
