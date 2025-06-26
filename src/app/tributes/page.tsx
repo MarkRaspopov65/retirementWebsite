@@ -236,6 +236,15 @@ const students2025: Person[] = [
     discipline: 'Strings',
   },
   {
+    name: 'Oswin Wong',
+    role: 'Student',
+    year: 2025,
+    message: `Hi Mr. Wriggs, thank you for all the work you have done for Unionville. The music program would not be what it is if it wasn't for your leadership and guidance, and you have certainly influenced so many students throughout your years. Happy retirement!`,
+    image: '/tributes/oswin.jpg',
+    graduatingYear: 2025,
+    discipline: 'Strings',
+  },
+  {
     name: 'Brandon Chan',
     role: 'Student',
     year: 2025,
