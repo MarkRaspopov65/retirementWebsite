@@ -45,7 +45,6 @@ const teachers2025: Person[] = [
     message: 'Fun times!',
     image: '/tributes/teh.jpg',
   },
-  // add more teachers here
 ].sort((a, b) => {
   const lastNameA = a.name.split(' ').slice(-1)[0].toLowerCase();
   const lastNameB = b.name.split(' ').slice(-1)[0].toLowerCase();
@@ -131,7 +130,6 @@ const alumni2025: Person[] = [
     image: '/tributes/aidan.png',
   },
 
-  // add more alumni here
 ].sort((a, b) => {
   const extractData = (person: Person) => {
     const match = person.name.match(/\(AU (\w+)? (\d{4})\)/);
@@ -550,7 +548,6 @@ const students2025: Person[] = [
     graduatingYear: 2025,
     discipline: 'Voice',
   }
-  // add more students here
 ];
 
 const disciplines = ['Winds', 'Strings', 'Voice', 'Piano'];

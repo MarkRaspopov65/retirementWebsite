@@ -11,7 +11,9 @@ export default function LoginPage() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     const isAdmin = username === 'jeffwrigglesworth' && password === 'iloveretirement';
-    const isUser = username === 'uhs2025' && password === 'aumusic2025';
+    const isUser =
+    (username === 'uhs2025' && password === 'aumusic2025') ||
+    (username === 'unionvillehighschool' && password === 'uhswolves');
 
     if (isAdmin || isUser) {
       localStorage.setItem('loggedIn', 'true');

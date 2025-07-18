@@ -69,7 +69,6 @@ export default function DailyPage() {
         Daily Notes
       </h1>
 
-      {/* Joke of the Day Section */}
       <h2 style={{ fontSize: '2.5rem', marginBottom: 15 }}>Joke of the Day</h2>
       <div
         style={{
@@ -89,7 +88,6 @@ export default function DailyPage() {
         {joke}
       </div>
 
-      {/* Retirement Countdown Section */}
       <h2 style={{ fontSize: '2.5rem', marginBottom: 15 }}>Retirement Tracker</h2>
       <div
         style={{

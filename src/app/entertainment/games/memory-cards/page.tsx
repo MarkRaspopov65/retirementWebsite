@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-// Music words for pairs - each word appears twice
 const musicWords = ['NOTE', 'REST', 'TONE', 'BASS', 'BEAT', 'CHORD'];
 
 function shuffleArray<T>(array: T[]) {
@@ -36,7 +35,6 @@ export default function MemoryCardsPage() {
   }, []);
 
   useEffect(() => {
-    // When all cards matched, show win popup
     if (cards.length > 0 && matchedIndices.size === cards.length) {
       setShowWinPopup(true);
     }
@@ -73,10 +71,8 @@ export default function MemoryCardsPage() {
     }
   };
 
-  // Smaller grid: 3 columns (6 pairs total = 12 cards)
   const gridColumns = 3;
 
-  // Button styles and hover handlers
   const smallButtonStyle: React.CSSProperties = {
     padding: '6px 12px',
     fontSize: '1rem',
@@ -229,7 +225,6 @@ export default function MemoryCardsPage() {
         })}
       </div>
 
-      {/* WIN POPUP MODAL */}
       {showWinPopup && (
         <div
           style={{

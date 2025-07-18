@@ -1,4 +1,4 @@
-/* Reset all margins and paddings */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,6 @@ body {
   overflow-y: scroll;
 }
 
-/* Remove white outlines from inputs and buttons on focus */
 input:focus, button:focus {
   outline: none;
 }

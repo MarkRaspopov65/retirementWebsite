@@ -195,7 +195,6 @@ export default function MusicWordlePage() {
         </div>
       )}
 
-      {/* Grid */}
       <div
         style={{
           display: 'grid',
@@ -280,7 +279,6 @@ export default function MusicWordlePage() {
 
       {message && <p style={{ fontWeight: '600' }}>{message}</p>}
 
-      {/* End Game Modal */}
       {showEndPopup && (
         <div
           style={{

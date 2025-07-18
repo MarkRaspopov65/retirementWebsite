@@ -123,7 +123,6 @@ export default function MessagesPage() {
           overflow: 'hidden',
         }}
       >
-        {/* Left: Portrait Image */}
         <div
           style={{
             flexBasis: '220px',
@@ -149,7 +148,6 @@ export default function MessagesPage() {
           />
         </div>
 
-        {/* Right: Scrollable Advice */}
         <div
           style={{
             flex: 1,

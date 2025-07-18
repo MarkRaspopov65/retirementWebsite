@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Link from 'next/link'; // Import Link from next/navigation if using Next.js 13+ App Router
+import Link from 'next/link'; 
 
 const games = [
   {
